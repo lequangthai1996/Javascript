@@ -6,10 +6,24 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
   <link rel="stylesheet" href="css/style.css">
-  <script src="js/app.js"></script>
+  <script>
+      document.addEventListener("DOMContentLoaded", function() {
+  
+        function createParagraph() {
+          let para = document.createElement('p');
+          para.textContent = "You have clicked button";
+          document.body.appendChild(para);
+        }
+  
+        const buttons = document.querySelectorAll('button');
+  
+        for(let i = 0; i < buttons.length; i++) {
+          buttons[i].addEventListener('click', createParagraph);
+        }
+      });
+    </script>
 </head>
 <body>
-    <p>Xin chao toi la quang thai le</p>
-    <button id="btn" onclick="myFunction()">Click</button>
+  <button>Click me</button>
 </body>
 </html>
